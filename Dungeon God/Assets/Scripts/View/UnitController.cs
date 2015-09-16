@@ -12,18 +12,17 @@ public class UnitController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         var hit = Physics2D.GetRayIntersectionAll(ray).FirstOrDefault(h => h.collider.GetComponent<Unit>() != null && h.collider.GetComponent<Unit>().Draggable);
         if(hit != default(RaycastHit2D))
         {
-            Debug.Log(hit.collider.name);
             _activeUnit = hit.collider.GetComponent<Unit>();
-            _activeUnit.GetComponent<Rigidbody2D>().isKinematic = false;
+            _activeUnit.Dragging = true;
             _offset = (Vector2)_activeUnit.transform.position - hit.point;
         }
     }
 
     public void OnDrag(PointerEventData eventData)
-    {
-        int layerMask = LayerMask.GetMask("BackgroundCollider");
+    {        
         if (_activeUnit)
         {
+            int layerMask = LayerMask.GetMask("BackgroundCollider");
             var ray = Camera.main.ScreenPointToRay(eventData.position);
             var hit = Physics2D.GetRayIntersection(ray, 1000f, layerMask);
             if (hit)
@@ -36,7 +35,10 @@ public class UnitController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        _activeUnit.GetComponent<Rigidbody2D>().isKinematic = true;
-        _activeUnit = null;
+        if (_activeUnit)
+        {
+            _activeUnit.Dragging = false;
+            _activeUnit = null;
+        }      
     }
 }
