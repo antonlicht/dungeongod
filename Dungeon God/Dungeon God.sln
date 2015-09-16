@@ -1,19 +1,23 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{29CC6790-DCB0-3774-DCE9-38D38CBBD120}") = "Dungeon God", "Assembly-CSharp.csproj", "{0D5701D2-637B-4F83-1D03-184DBF9E2F8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{0D5701D2-637B-4F83-1D03-184DBF9E2F8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D5701D2-637B-4F83-1D03-184DBF9E2F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D5701D2-637B-4F83-1D03-184DBF9E2F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D5701D2-637B-4F83-1D03-184DBF9E2F8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-							GlobalSection(MonoDevelopProperties) = preSolution
+											GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
